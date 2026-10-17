@@ -1,0 +1,20 @@
+name: ppo-ant
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy=2.2.6
+  - pytorch-cpu=2.14.1
+  - matplotlib-base=3.11.2
+  - imageio=2.38.1
+  - pillow=12.3.0
+  # Headless OpenGL for MUJOCO_GL=egl: the glvnd EGL dispatcher plus Mesa's
+  # software (llvmpipe) EGL driver, so rendering works on CPU-only nodes.
+  # (Note: conda-forge "mesa" is an unrelated Python package; Mesa GL is "mesalib".)
+  - libegl=1.7.0
+  - mesalib=26.2.4
+  - pyopengl=3.1.10
+  - pip
+  - pip:
+      - gymnasium[mujoco]==1.2.2
+      - mujoco==3.15.0
